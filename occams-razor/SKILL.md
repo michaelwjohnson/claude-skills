@@ -1,6 +1,6 @@
 ---
 name: occams-razor
-description: Use when designing, scoping, or reviewing anything with parts — a system design, experiment, spec, plan, document, or API — and especially when adding a component, comparison, model, metric, section, or option. Catches elements added for symmetry, completeness, or elegance rather than because a question requires them. Triggered by: "should I also add", a design that has grown since it was proposed, plans with multiple arms or comparisons, scope review, anything that feels thorough.
+description: 'Use when designing, scoping, or reviewing anything with parts — a system design, experiment, spec, plan, document, or API — and especially when adding a component, comparison, model, metric, section, or option. Catches elements added for symmetry, completeness, or elegance rather than because a question requires them. Triggered by: "should I also add", a design that has grown since it was proposed, plans with multiple arms or comparisons, scope review, anything that feels thorough.'
 ---
 
 # Occam's Razor

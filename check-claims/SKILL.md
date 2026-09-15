@@ -1,6 +1,6 @@
 ---
 name: check-claims
-description: Use before sending, submitting, or publishing anything containing factual claims — a proposal, report, spec, README, analysis, review, or answer to a question. Catches statements that are fluent and wrong: numbers whose source nobody can name, thresholds attached to the wrong metric, facts that are true of a neighbouring concept, and figures that lost their referent when something was edited. Triggered by: finishing a document, "is this right", stating a baseline or floor or threshold, quoting a number, explaining a metric, any claim a reader would take on trust.
+description: 'Use before sending, submitting, or publishing anything containing factual claims — a proposal, report, spec, README, analysis, review, or answer to a question. Catches statements that are fluent and wrong: numbers whose source nobody can name, thresholds attached to the wrong metric, facts that are true of a neighbouring concept, and figures that lost their referent when something was edited. Triggered by: finishing a document, "is this right", stating a baseline or floor or threshold, quoting a number, explaining a metric, any claim a reader would take on trust.'
 ---
 
 # Check Claims
