@@ -119,26 +119,26 @@ Also count distinct research questions. **More than one per deliverable is the m
 
 ## Before / After
 
-**Before** — an experiment design that grew:
+**Before** — an experiment that grew:
 
-> Four models: 3D from random weights, 2D from random weights, 2D from ImageNet weights, 3D from video weights. Compared under identical folds. The graduate extension compares self-supervised pretraining against random initialization.
+> Four arms: current checkout, current checkout with a progress bar, one-page checkout, one-page checkout with a progress bar. Run on identical traffic. The follow-up study compares progress-bar styles.
 
-Applying the test:
+The stated question is whether one-page checkout converts better. Applying the test:
 
-- Model 1 vs 2 → *does volume structure help?* This is the stated question. Keep both.
-- Model 2 vs 3 → *does pretraining help?* Not the stated question. **Second question.**
-- Model 4 → completes the 2×2. **Filling in.**
-- Extension → *does initialization matter?* **Duplicates** what models 2 and 3 introduced.
+- Arm 1 vs 3 → *does one-page convert better?* This is the stated question. Keep both.
+- Arm 1 vs 2 → *does a progress bar help?* Not the stated question. **Second question.**
+- Arm 4 → completes the 2×2. **Filling in.**
+- Follow-up → *which progress bar is best?* **Duplicates** the ground arm 2 introduced.
 
 **After:**
 
-> Two models: 3D and 2D, both from random weights, answering whether volume structure helps. The extension compares self-supervised pretraining against random initialization across label fractions.
+> Two arms: current checkout and one-page checkout, answering whether one-page converts better. The follow-up study compares progress-bar styles.
 
-One question per section, and the design is smaller rather than rearranged.
+One question per deliverable, and the design is smaller rather than rearranged.
 
-**What the first pass got wrong.** It moved the ImageNet and video weights into the extension instead of cutting them, on the reasoning that "the extension is about initialization." But the extension's stated question was narrower — whether self-supervised pretraining *on these volumes* buys label efficiency. Downloaded weights answer *where weights come from*, which no section had asked. The elements were checked against the reason they left, never against the question at their destination. That is pattern 7.
+**What the first pass got wrong.** It moved the progress-bar arms into the follow-up instead of cutting them, on the reasoning that "the follow-up is about progress bars." But the follow-up's question was narrower — which *style* wins once a bar is present. Whether to have one at all is a different question, and no section had asked it. The arms were checked against the reason they left, never against the question at their destination. That is pattern 7.
 
-Cutting them then left three orphans elsewhere: a research question still asking two things, a tuning procedure still describing five folds, and a fallback naming a model that no longer existed. None of them mentioned the removed models by name. That is pattern 8.
+Cutting them then left three orphans elsewhere: a hypothesis still naming two effects, a sample-size calculation still powered for four arms, and a rollout plan referring to an arm that no longer existed. None of them named the removed arms, so searching for them came back clean. That is pattern 8.
 
 ---
 
