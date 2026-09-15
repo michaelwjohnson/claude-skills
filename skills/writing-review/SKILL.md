@@ -138,13 +138,12 @@ wearing an argument's clothes.
 
 ## What This Does Not Do
 
-Three adjacent checks, deliberately kept separate:
+Two adjacent checks, deliberately kept separate:
 
 | Question | Skill |
 |---|---|
 | Does every element earn its place? | `occams-razor` |
 | Is any of this false? | `check-claims` |
-| Does this read like a machine wrote it? | `no-ai-slop` |
 
 The overlaps are real and the boundaries matter:
 
@@ -154,11 +153,8 @@ The overlaps are real and the boundaries matter:
 - **Support vs check-claims.** Support asks whether a claim has evidence under
   it. `check-claims` asks whether that evidence is *true*. Well-supported and
   wrong is a real state.
-- **Voice vs no-ai-slop.** This asks whether the writing sounds like a person.
-  `no-ai-slop` is the specific catalogue of phrases that sound like a machine.
-
-Running all four on one document is reasonable. Folding them into one skill is
-not — it would be one check answering four questions.
+Running all three on one document is reasonable. Folding them into one skill is
+not — it would be one check answering three questions.
 
 ---
 

@@ -111,10 +111,6 @@ done
 Either way, invoke with `/occams-razor`, `/check-claims` or `/writing-review`, or
 let Claude trigger them from the `description` in each skill's frontmatter.
 
-`writing-review` names a fourth skill, `no-ai-slop`, where it draws the boundary
-on voice. That one is not in this repo; the reference is there to say what
-`writing-review` deliberately does not cover.
-
 Project-scoped instead of user-scoped: use `.claude/skills/` in the repo.
 
 ## License
