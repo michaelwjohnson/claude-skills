@@ -32,29 +32,6 @@ load-bearing, and because a cut leaves orphans that are themselves often false.
 than polishing a section you are about to delete. `check-claims` goes last, on
 the sentences that made it.
 
-## Where they came from
-
-The first two were written after the errors they catch, not before.
-
-`check-claims` exists because a document asserted that a label's base rate was
-"the floor every model must clear." True for accuracy. The metric was AUROC,
-whose chance floor is 0.5 regardless of prevalence. It survived a scope review, a
-vagueness sweep and a style pass — none of which read for truth — and surfaced
-only when someone asked what the metric meant.
-
-`occams-razor` gained its last two patterns the same way. A first pass cut two
-arms from a design and *moved* them into a follow-up rather than removing them.
-The arms were checked against the reason they left, never against the question
-where they landed. That cut then stranded a hypothesis, a sample-size
-calculation and a rollout plan. None of them named the removed arms, so
-searching came back clean.
-
-`writing-review` has a different origin: it merges two published sources — a
-Campus Writing Program rubric aimed at argument, and Jeff Zych's notes on
-Zinsser aimed at sentences. They disagree usefully. A draft can be immaculate
-sentence by sentence and say nothing, so the skill checks the two levels
-separately. Both sources are cited in the skill.
-
 ## occams-razor
 
 Built on Einstein's formulation of the razor:
@@ -86,6 +63,20 @@ false, and can that be checked in a minute?
 Its first pattern is **the neighbour's fact** — a statement true of a closely
 related thing, applied to this one. These are the hardest to catch by reading,
 because they are true, just not here.
+
+## writing-review
+
+Two levels, checked separately. The argument — is there one point, in an order a
+reader can follow, with evidence under each claim? Then the sentences — concrete
+nouns, active verbs, and whatever survived the first draft that should not have.
+
+A draft can be immaculate sentence by sentence and say nothing. It can carry a
+real argument in prose nobody finishes. Fixing sentences in a section you are
+about to cut is wasted work, so the argument goes first.
+
+Built from two sources that disagree usefully: a Campus Writing Program rubric
+aimed at argument, and Jeff Zych's notes on Zinsser aimed at sentences. Both are
+cited in the skill.
 
 ## Install
 
