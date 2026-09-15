@@ -1,0 +1,29 @@
+{
+  "name": "claude-skills",
+  "owner": {
+    "name": "Michael Johnson",
+    "url": "https://github.com/michaelwjohnson"
+  },
+  "metadata": {
+    "description": "A scope razor and a claim checker. They read structure and truth separately, because those fail independently.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "occams-razor",
+      "description": "Cuts parts added for symmetry, completeness, or elegance rather than because a question requires them. Einstein's formulation: as simple and as few as possible, without surrendering the adequate representation of a single datum of experience. Both halves bind.",
+      "source": "./",
+      "skills": ["./skills/occams-razor"],
+      "category": "review",
+      "tags": ["design-review", "scope", "specs", "planning"]
+    },
+    {
+      "name": "check-claims",
+      "description": "Catches statements that are fluent and wrong: numbers whose source nobody can name, thresholds attached to the wrong metric, facts true of a neighbouring concept, and figures that lost their referent when something was edited.",
+      "source": "./",
+      "skills": ["./skills/check-claims"],
+      "category": "review",
+      "tags": ["fact-checking", "verification", "writing", "review"]
+    }
+  ]
+}

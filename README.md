@@ -6,8 +6,8 @@ separately.
 
 | Skill | Asks | Catches |
 |---|---|---|
-| [`occams-razor`](occams-razor/) | Does every element earn its place? | Parts added for symmetry, completeness, or elegance rather than because a question requires them |
-| [`check-claims`](check-claims/) | Is any of this false? | Statements that are fluent, plausible, and wrong |
+| [`occams-razor`](skills/occams-razor/) | Does every element earn its place? | Parts added for symmetry, completeness, or elegance rather than because a question requires them |
+| [`check-claims`](skills/check-claims/) | Is any of this false? | Statements that are fluent, plausible, and wrong |
 
 ## Why two skills and not one
 
@@ -63,16 +63,25 @@ what the metric meant.
 
 ## Install
 
-Copy either directory into your skills folder:
+**As plugins** — no clone, and `claude plugin update` keeps them current:
 
 ```bash
-git clone https://github.com/michaelwjohnson/claude-skills.git
-cp -r claude-skills/occams-razor ~/.claude/skills/
-cp -r claude-skills/check-claims ~/.claude/skills/
+claude plugin marketplace add michaelwjohnson/claude-skills
+claude plugin install occams-razor@claude-skills
+claude plugin install check-claims@claude-skills
 ```
 
-Then invoke with `/occams-razor` or `/check-claims`, or let Claude trigger them
-from the `description` in each skill's frontmatter.
+**Or drop the files in directly** — each skill is a single file:
+
+```bash
+B=https://raw.githubusercontent.com/michaelwjohnson/claude-skills/main/skills
+mkdir -p ~/.claude/skills/{occams-razor,check-claims}
+curl -fsSL $B/occams-razor/SKILL.md -o ~/.claude/skills/occams-razor/SKILL.md
+curl -fsSL $B/check-claims/SKILL.md -o ~/.claude/skills/check-claims/SKILL.md
+```
+
+Either way, invoke with `/occams-razor` or `/check-claims`, or let Claude trigger
+them from the `description` in each skill's frontmatter.
 
 Project-scoped instead of user-scoped: use `.claude/skills/` in the repo.
 
