@@ -1,8 +1,7 @@
 # Claude Skills
 
 Two skills for [Claude Code](https://claude.com/claude-code). They answer
-different questions about the same piece of work, and they are meant to be run
-separately.
+different questions about the same piece of work, and should be run separately.
 
 | Skill | Asks | Catches |
 |---|---|---|
@@ -21,6 +20,29 @@ independently, and passing one says nothing about the other:
 Folding them together would mean one skill answering two questions — which is
 itself one of the failure patterns `occams-razor` is looking for.
 
+## Using them together
+
+Run the razor first, then the claim check — in that order, because cutting
+changes which claims are still load-bearing, and because a cut leaves orphans
+that are themselves often false.
+
+## Where they came from
+
+Both skills were written after the errors they catch, not before.
+
+`check-claims` exists because a document asserted that a label's base rate was
+"the floor every model must clear." True for accuracy. The metric was AUROC,
+whose chance floor is 0.5 regardless of prevalence. It survived a scope review, a
+vagueness sweep and a style pass — none of which read for truth — and surfaced
+only when someone asked what the metric meant.
+
+`occams-razor` gained its last two patterns the same way. A first pass cut two
+arms from a design and *moved* them into a follow-up rather than removing them.
+The arms were checked against the reason they left, never against the question
+where they landed. That cut then stranded a hypothesis, a sample-size
+calculation and a rollout plan. None of them named the removed arms, so
+searching came back clean.
+
 ## occams-razor
 
 Built on Einstein's formulation of the razor:
@@ -31,10 +53,9 @@ Built on Einstein's formulation of the razor:
 
 **Both halves bind.** The first cuts; the second stops the cutting. This is not
 minimalism — dropping something that carries a claim is the same failure as
-adding something that doesn't, just in the other direction. The skill includes a
-"What Is Not Excess" section for exactly this reason: stated requirements,
-controls that isolate the variable under study, baselines, honest limitations,
-and error handling on paths that can fail are never the thing to cut.
+adding something that doesn't, just in the other direction. So the skill carries a "What Is Not Excess" list. Stated requirements, controls
+that isolate the variable under study, baselines, honest limitations, and error
+handling on paths that can fail are never the thing to cut.
 
 Eight failure patterns, including the two that are hardest to see from inside:
 
@@ -53,13 +74,6 @@ false, and can that be checked in a minute?
 Its first pattern is **the neighbour's fact** — a statement true of a closely
 related thing, applied to this one. These are the hardest to catch by reading,
 because they are true, just not here.
-
-Both skills grew out of real errors. The worked example in `check-claims` is one
-of them: a document asserted that a label's base rate was "the floor every model
-must clear." True for accuracy. The metric was AUROC, whose chance floor is 0.5
-regardless of prevalence. It survived a scope review, a vagueness sweep and a
-style pass — none of which read for truth — and surfaced only when someone asked
-what the metric meant.
 
 ## Install
 
@@ -84,12 +98,6 @@ Either way, invoke with `/occams-razor` or `/check-claims`, or let Claude trigge
 them from the `description` in each skill's frontmatter.
 
 Project-scoped instead of user-scoped: use `.claude/skills/` in the repo.
-
-## Using them together
-
-Run the razor first, then the claim check — in that order, because cutting
-changes which claims are still load-bearing, and because a cut leaves orphans
-that are themselves often false.
 
 ## License
 
