@@ -44,7 +44,7 @@ A figure with no traceable origin. Often it was measured once, in a context that
 **Test:** for every number, say measured, cited, computed, or assumed. If none applies, it was invented — usually from a plausible memory. Either source it or write "approximately" and mean it.
 
 ### 3. The Orphaned Figure
-A number whose referent was edited away. "Costs five trainings" after "five-fold" was cut. "The third condition" after the list became two.
+A number whose referent was edited away. "Runs in three passes" after one pass was removed. "The third option" after the list became two.
 
 **Symptom:** the number is right about something that is no longer in the document.
 **Test:** for each figure, point at the thing that determines it. If you cannot find it in the current text, the figure is stranded.
@@ -119,7 +119,7 @@ A wrong deadline and a wrong adjective are not the same error.
 
 Pattern 1, the neighbour's fact. It survived a scope review, a vagueness sweep, and a style pass — none of which read for truth. It surfaced only when someone asked what the metric meant.
 
-**Corrected:** "An AUROC of 0.5 is the chance floor every label must clear. I will report each label's base rate alongside its AUROC, since a score built on 110 positive scans deserves less confidence than one built on 700."
+**Corrected:** "An AUROC of 0.5 is the chance floor every label must clear. I will report each label's base rate alongside its AUROC, since a score built on a handful of positives deserves less confidence than one built on thousands."
 
 The fix kept the base rate but changed its job, from a floor to a measure of how much data the score rests on.
 
