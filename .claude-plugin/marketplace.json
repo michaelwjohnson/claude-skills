@@ -5,7 +5,7 @@
     "url": "https://github.com/michaelwjohnson"
   },
   "metadata": {
-    "description": "A scope razor and a claim checker. They read structure and truth separately, because those fail independently.",
+    "description": "A scope razor, a claim checker, and a writing review. Each reads a different failure, because those fail independently.",
     "version": "1.0.0"
   },
   "plugins": [
@@ -13,17 +13,46 @@
       "name": "occams-razor",
       "description": "Cuts parts added for symmetry, completeness, or elegance rather than because a question requires them. Einstein's formulation: as simple and as few as possible, without surrendering the adequate representation of a single datum of experience. Both halves bind.",
       "source": "./",
-      "skills": ["./skills/occams-razor"],
+      "skills": [
+        "./skills/occams-razor"
+      ],
       "category": "review",
-      "tags": ["design-review", "scope", "specs", "planning"]
+      "tags": [
+        "design-review",
+        "scope",
+        "specs",
+        "planning"
+      ]
     },
     {
       "name": "check-claims",
       "description": "Catches statements that are fluent and wrong: numbers whose source nobody can name, thresholds attached to the wrong metric, facts true of a neighbouring concept, and figures that lost their referent when something was edited.",
       "source": "./",
-      "skills": ["./skills/check-claims"],
+      "skills": [
+        "./skills/check-claims"
+      ],
       "category": "review",
-      "tags": ["fact-checking", "verification", "writing", "review"]
+      "tags": [
+        "fact-checking",
+        "verification",
+        "writing",
+        "review"
+      ]
+    },
+    {
+      "name": "writing-review",
+      "description": "Checks whether the argument holds and whether the sentences carry it: an unstated point, sections in an order nobody can follow, generalizations with no evidence under them, abstraction where a concrete noun belongs, and clutter that survived the first draft.",
+      "source": "./",
+      "skills": [
+        "./skills/writing-review"
+      ],
+      "category": "review",
+      "tags": [
+        "writing",
+        "editing",
+        "prose",
+        "review"
+      ]
     }
   ]
 }

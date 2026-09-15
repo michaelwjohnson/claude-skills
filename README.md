@@ -1,34 +1,40 @@
 # Claude Skills
 
-Two skills for [Claude Code](https://claude.com/claude-code). They answer
-different questions about the same piece of work, and should be run separately.
+Three skills for [Claude Code](https://claude.com/claude-code). Each reads a
+different failure in the same piece of work, and they should be run separately.
 
 | Skill | Asks | Catches |
 |---|---|---|
 | [`occams-razor`](skills/occams-razor/) | Does every element earn its place? | Parts added for symmetry, completeness, or elegance rather than because a question requires them |
 | [`check-claims`](skills/check-claims/) | Is any of this false? | Statements that are fluent, plausible, and wrong |
+| [`writing-review`](skills/writing-review/) | Does the writing work? | An unstated point, an order nobody can follow, claims with no evidence under them, and clutter that survived the draft |
 
-## Why two skills and not one
+## Why three skills and not one
 
-A scope review reads structure. A claim check reads truth. They fail
-independently, and passing one says nothing about the other:
+A scope review reads structure. A claim check reads truth. A writing review
+reads whether a reader can follow either. All three fail independently, and
+passing one says nothing about the others:
 
 > A false claim can carry a real question, duplicate nothing, and survive every
 > structural pattern. Fluent and wrong looks exactly like fluent and right from
 > inside the document.
 
-Folding them together would mean one skill answering two questions — which is
+Folding them together would mean one skill answering three questions — which is
 itself one of the failure patterns `occams-razor` is looking for.
 
 ## Using them together
 
-Run the razor first, then the claim check — in that order, because cutting
-changes which claims are still load-bearing, and because a cut leaves orphans
-that are themselves often false.
+Cut first, then fix the writing, then verify what survived.
+
+The razor goes first because cutting changes which claims are still
+load-bearing, and because a cut leaves orphans that are themselves often false.
+`writing-review` comes next, so you are shaping text that will survive rather
+than polishing a section you are about to delete. `check-claims` goes last, on
+the sentences that made it.
 
 ## Where they came from
 
-Both skills were written after the errors they catch, not before.
+The first two were written after the errors they catch, not before.
 
 `check-claims` exists because a document asserted that a label's base rate was
 "the floor every model must clear." True for accuracy. The metric was AUROC,
@@ -42,6 +48,12 @@ The arms were checked against the reason they left, never against the question
 where they landed. That cut then stranded a hypothesis, a sample-size
 calculation and a rollout plan. None of them named the removed arms, so
 searching came back clean.
+
+`writing-review` has a different origin: it merges two published sources — a
+Campus Writing Program rubric aimed at argument, and Jeff Zych's notes on
+Zinsser aimed at sentences. They disagree usefully. A draft can be immaculate
+sentence by sentence and say nothing, so the skill checks the two levels
+separately. Both sources are cited in the skill.
 
 ## occams-razor
 
@@ -83,19 +95,25 @@ because they are true, just not here.
 claude plugin marketplace add michaelwjohnson/claude-skills
 claude plugin install occams-razor@claude-skills
 claude plugin install check-claims@claude-skills
+claude plugin install writing-review@claude-skills
 ```
 
 **Or drop the files in directly** — each skill is a single file:
 
 ```bash
 B=https://raw.githubusercontent.com/michaelwjohnson/claude-skills/main/skills
-mkdir -p ~/.claude/skills/{occams-razor,check-claims}
-curl -fsSL $B/occams-razor/SKILL.md -o ~/.claude/skills/occams-razor/SKILL.md
-curl -fsSL $B/check-claims/SKILL.md -o ~/.claude/skills/check-claims/SKILL.md
+mkdir -p ~/.claude/skills/{occams-razor,check-claims,writing-review}
+for s in occams-razor check-claims writing-review; do
+  curl -fsSL $B/$s/SKILL.md -o ~/.claude/skills/$s/SKILL.md
+done
 ```
 
-Either way, invoke with `/occams-razor` or `/check-claims`, or let Claude trigger
-them from the `description` in each skill's frontmatter.
+Either way, invoke with `/occams-razor`, `/check-claims` or `/writing-review`, or
+let Claude trigger them from the `description` in each skill's frontmatter.
+
+`writing-review` names a fourth skill, `no-ai-slop`, where it draws the boundary
+on voice. That one is not in this repo; the reference is there to say what
+`writing-review` deliberately does not cover.
 
 Project-scoped instead of user-scoped: use `.claude/skills/` in the repo.
 
