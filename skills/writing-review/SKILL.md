@@ -153,6 +153,7 @@ The overlaps are real and the boundaries matter:
 - **Support vs check-claims.** Support asks whether a claim has evidence under
   it. `check-claims` asks whether that evidence is *true*. Well-supported and
   wrong is a real state.
+
 Running all three on one document is reasonable. Folding them into one skill is
 not — it would be one check answering three questions.
 
