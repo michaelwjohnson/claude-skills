@@ -9,19 +9,6 @@ different failure in the same piece of work, and they should be run separately.
 | [`check-claims`](skills/check-claims/) | Is any of this false? | Statements that are fluent, plausible, and wrong |
 | [`writing-review`](skills/writing-review/) | Does the writing work? | An unstated point, an order nobody can follow, claims with no evidence under them, and clutter that survived the draft |
 
-## Why three skills and not one
-
-A scope review reads structure. A claim check reads truth. A writing review
-reads whether a reader can follow either. All three fail independently, and
-passing one says nothing about the others:
-
-> A false claim can carry a real question, duplicate nothing, and survive every
-> structural pattern. Fluent and wrong looks exactly like fluent and right from
-> inside the document.
-
-Folding them together would mean one skill answering three questions — which is
-itself one of the failure patterns `occams-razor` is looking for.
-
 ## Using them together
 
 Cut first, then fix the writing, then verify what survived.
